@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom'
 import styles from './app.less'
 import up from './img/up.jpeg'
 import xiaoxin from './img/xiaoxin.jpeg'
+import { Rate } from 'antd';
 
 
 function App(){
     return <div>
         <h1 className={styles.h1}>Hello, world!</h1>
+        <Rate />
         <div>
             <img src={xiaoxin}  style={{width:'50px'}}  alt="xiaoxin" />
             <img src={up} style={{width:'50px'}}   alt="up" />

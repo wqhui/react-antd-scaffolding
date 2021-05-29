@@ -1,4 +1,5 @@
-## Webpack5配置的React脚手架（包含AntDesign）
+## Webpack5配置的React脚手架（包含AntDesign@4.2.4）
+
 
 ### 实现的webpack配置项
 

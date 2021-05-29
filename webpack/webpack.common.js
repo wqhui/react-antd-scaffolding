@@ -9,7 +9,7 @@ const PATHS = require('../paths')
 const IS_DEV = process.env.NODE_ENV === 'development'
 const CSS_NAME = IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash:8].css'
 const JS_NAME = IS_DEV ? 'js/[name].js' : 'js/[name].[chunkhash:8].js'
-const LESS_NAME ='hui-[name]-[local]'
+const LESS_NAME = 'hui-[name]-[local]'
 
 const IMGAE_INLINE_LINT_SIZE = 8 * 1024
 
@@ -21,7 +21,7 @@ const commonConfig = {
         path: PATHS.outputPath,
         filename: JS_NAME,
         clean: true, //清理上次打包文件
-        assetModuleFilename: 'images/[hash][ext][query]' //自定义输出文件名
+        assetModuleFilename: 'images/[hash][ext][query]', //自定义输出文件名
     },
     resolve: {
         extensions: ['.js', '.jsx'],
@@ -41,6 +41,7 @@ const commonConfig = {
             },
             {
                 test: /(\.css|\.less)$/,
+                exclude: PATHS.nodeModulesPath,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -61,6 +62,23 @@ const commonConfig = {
                 ]
             },
             {
+                // for ant design
+                test: /\.less$/,
+                include: PATHS.nodeModulesPath,
+                use: [
+                    'style-loader','css-loader','postcss-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: { // 如果使用less-loader@5，请移除 lessOptions 这一级直接配置选项。
+                                modifyVars: {},
+                                javascriptEnabled: true,
+                            },
+                        }
+                    }
+                ]
+            },
+            {
                 test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
                 type: 'asset',
                 parser: {
@@ -77,18 +95,22 @@ const commonConfig = {
     },
     optimization: {
         minimizer: [//开发模式下使用，请设置 optimization.minimize 选项为 true。
-          new CssMinimizerPlugin(),
+            new CssMinimizerPlugin(
+                {
+                    exclude: PATHS.nodeModulesPath
+                }
+            ),
         ],
         splitChunks: {//提取所有的 CSS 到一个文件中
             cacheGroups: {
-              styles: {
-                name: 'app',
-                type: 'css/mini-extract',
-                // For webpack@4
-                // test: /\.css$/,
-                chunks: 'all',
-                enforce: true,
-              },
+                styles: {
+                    name: 'app',
+                    type: 'css/mini-extract',
+                    // For webpack@4
+                    // test: /\.css$/,
+                    chunks: 'all',
+                    enforce: true,
+                },
             },
         },
     },
