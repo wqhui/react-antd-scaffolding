@@ -9,7 +9,7 @@ const PATHS = require('../paths')
 const IS_DEV = process.env.NODE_ENV === 'development'
 const CSS_NAME = IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash:8].css'
 const JS_NAME = IS_DEV ? 'js/[name].js' : 'js/[name].[chunkhash:8].js'
-const LESS_NAME ='hui-[name]'
+const LESS_NAME ='hui-[name]-[local]'
 
 const IMGAE_INLINE_LINT_SIZE = 8 * 1024
 
