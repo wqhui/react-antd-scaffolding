@@ -1,5 +1,9 @@
-## Webpack5配置的React脚手架（包含AntDesign@4.2.4）
+## react-antd脚手架
 
+### 基于
+- webpack@5.38.1
+- react@16.13.1
+- AntDesign@4.2.4
 
 ### 实现的webpack配置项
 
