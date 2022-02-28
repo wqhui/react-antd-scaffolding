@@ -6,7 +6,7 @@ const commonConfig = require('./webpack.common')
 
 const devConfig = merge(commonConfig, {
     mode: 'development',
-    devtool: 'cheap-module-source-map',
+    devtool: 'eval-cheap-module-source-map',
     devServer: {// webpack-dev-server
         port: '9999',
         contentBase: PATHS.outputPath,

@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './app.less'
-import up from './img/up.jpeg'
-import xiaoxin from './img/xiaoxin.jpeg'
+import up from './assets/images/up.jpeg'
+import xiaoxin from './assets/images/xiaoxin.jpeg'
 import { Rate } from 'antd';
-
 
 function App(){
     return <div>
