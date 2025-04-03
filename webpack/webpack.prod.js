@@ -9,7 +9,7 @@ const commonConfig = require('./webpack.common')
 
 const prodConfig = merge(commonConfig, {
     mode: 'production',
-    devtool: 'source-map', //生成.js.map的映射文件   
+    devtool: 'source-map', //生成.js.map的映射文件
     optimization: {
         minimizer: [
             //压缩css

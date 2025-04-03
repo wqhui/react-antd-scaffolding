@@ -17,10 +17,6 @@ module.exports = {
         '@babel/preset-react'
     ],
     plugins: [
-        ['import', {
-            libraryName: 'antd',
-            libraryDirectory: 'lib',
-            style: true
-        }]
-    ]
+        process.env.NODE_ENV === "development" && "react-refresh/babel" // 开发环境使用react-refresh
+      ].filter(Boolean)
 }

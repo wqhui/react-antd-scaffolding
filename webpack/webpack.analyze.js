@@ -4,6 +4,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const prodConfig = require('./webpack.prod')
 
+/** @type {import('webpack').Configuration} */
 const analyzeConfig = merge(prodConfig, {
     plugins:[ 
         // 配置打包分析 

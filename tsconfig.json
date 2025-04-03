@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        // 指定ECMAScript目标版本为ES6
+        "target": "ES6",
+        // 指定模块系统为ESNext
+        "module": "ESNext",
+        // 启用所有严格类型检查选项
+        "strict": true,
+        // 指定JSX代码的转换方式为react-jsx
+        "jsx": "react-jsx",
+        // 支持ES模块和CommonJS模块之间的互操作性
+        "esModuleInterop": true,
+        // 跳过对声明文件的类型检查
+        "skipLibCheck": true,
+        // 强制文件名称大小写一致
+        "forceConsistentCasingInFileNames": true,
+        // 指定模块解析策略为bundler，适用于打包工具如Webpack、Rollup等
+        "moduleResolution": "bundler",
+        // 允许导入JSON模块
+        "resolveJsonModule": true,
+        // 不生成输出文件
+        "noEmit": true,
+        // 指定基础目录，用于解析非相对模块名称
+        "baseUrl": ".",
+        // 路径映射，将@/*映射到src/*
+        "paths": {
+            "@/*": ["src/*"],
+            "*.less": ["src/app.module.less"],
+            "*.jpeg": ["src/assets/images/*.jpeg"]
+        }
+    },
+    // 包含要编译的文件或目录
+    "include": ["src", "./custom.d.ts"],
+    // 排除不需要编译的文件或目录
+    "exclude": ["node_modules"]
+}

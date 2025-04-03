@@ -10,7 +10,7 @@ const outputPath = path.resolve(rootPath, 'build')
 const nodeModulesPath = path.resolve(rootPath,'node_modules')
 const staticPath = path.resolve(rootPath, 'static')
 const srcPath = path.resolve(rootPath, 'src')
-const entryPath = path.resolve(srcPath, 'entry.js')
+const entryPath = path.resolve(srcPath, 'entry.tsx')
 const publicHtmlPath = path.resolve(staticPath, 'index.html')
 
 module.exports = {

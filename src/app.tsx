@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import styles from './app.less'
 import up from './assets/images/up.jpeg'
 import xiaoxin from './assets/images/xiaoxin.jpeg'
 import { Rate } from 'antd';
+
+import styles from './app.less'
 
 function App(){
     return <div>
@@ -16,11 +16,5 @@ function App(){
     </div>
 }
 
-function renderApp() {
-    ReactDOM.render(
-        <App/>,
-        document.getElementById('root')
-    );
-}
 
-export default renderApp
+export default App
