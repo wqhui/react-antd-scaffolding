@@ -24,9 +24,7 @@
         "baseUrl": ".",
         // 路径映射，将@/*映射到src/*
         "paths": {
-            "@/*": ["src/*"],
-            "*.less": ["src/app.module.less"],
-            "*.jpeg": ["src/assets/images/*.jpeg"]
+            "@/*": ["src/*"]
         }
     },
     // 包含要编译的文件或目录

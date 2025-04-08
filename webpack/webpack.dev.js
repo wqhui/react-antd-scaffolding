@@ -1,26 +1,23 @@
-const webpack = require('webpack')
-const { merge } = require('webpack-merge')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-
-const PATHS = require('../paths')
-const commonConfig = require('./webpack.common')
+import webpack from 'webpack'
+import { merge } from 'webpack-merge'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import * as PATHS from '../paths.js';
+import commonConfig from './webpack.common.js';
 
 /** @type {import('webpack').Configuration} */
-const devConfig = merge(commonConfig,{
-    mode: 'development',
-    devtool: 'eval-cheap-module-source-map',
-    devServer: {
-      port: '9999',
-      static: {
-        directory: PATHS.outputPath,
-      },
-      hot: true,
+const devConfig = merge(commonConfig, {
+  mode: 'development',
+  devtool: 'eval-cheap-module-source-map',
+  devServer: {
+    port: '9999',
+    static: {
+      directory: PATHS.outputPath,
     },
-    plugins: [
-        new ReactRefreshWebpackPlugin() // react热更新插件
-    ]
-});
+    hot: true,
+  },
+  plugins: [
+    new ReactRefreshWebpackPlugin(), // react热更新插件
+  ],
+})
 
-
-
-module.exports = devConfig
+export default devConfig;

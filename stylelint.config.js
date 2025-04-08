@@ -7,10 +7,10 @@ export default {
     'color-function-notation': null,
     'color-hex-length': null,
     'selector-class-pattern': [
-      '^[a-z0-9]+([_-][a-z0-9]+)*$',
+      '^[a-z0-9]+([-][a-z0-9]+)*$',
       {
         message:
-          '类名必须使用小写字母、数字、下划线或连字符（如 .button_primary 或 .16-px-mar）',
+          '类名必须使用小写字母、数字、连字符（如 .button-primary 或 .16-px-mar）',
       },
     ],
     'font-family-name-quotes': null,

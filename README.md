@@ -1,20 +1,73 @@
-## react-antd脚手架
+# React + Ant Design 项目脚手架
 
-### 基于
-- webpack@5.38.1
-- react@16.13.1
-- AntDesign@4.2.4
+## 项目概述
 
-### 实现的webpack配置项
+基于React 19 + Ant Design 5 + Webpack 5构建的现代化前端开发脚手架，提供完整的开发环境配置和优化方案。
 
-- jsx、es6语法解析
-- 区分开发、生产模式
-- 拆包优化
-- 开发服务 webpack-dev-server
+## 技术栈
+
+- React 19
+- Ant Design 5
+- Webpack 5
+- TypeScript
+- Less
+
+## 快速开始
+
+1. 安装依赖
+```bash
+yarn
+```
+
+2. 开发模式
+```bash
+yarn dev
+```
+默认预览链接: http://localhost:9999/
+
+3. 生产构建
+```bash
+yarn build
+```
+
+## 项目结构
+
+```
+├── src/                  # 源代码目录
+│   ├── app.tsx           # 主应用组件
+│   ├── entry.tsx         # 应用入口
+│   └── assets/           # 静态资源
+├── static/               # 静态文件
+│   └── index.html        # HTML模板
+├── webpack/              # Webpack配置
+│   ├── webpack.common.js # 公共配置
+│   ├── webpack.dev.js    # 开发配置
+│   ├── webpack.prod.js   # 生产配置
+│   └── webpack.analyze.js# 分析配置
+└── ...                   # 其他配置文件
+```
+
+## 特性
+
+### Webpack配置
+
+- 支持JSX/TSX和ES6+语法
+- 开发/生产环境分离
+- 代码拆分优化
+- Webpack Dev Server
 - 打包分析
-- html模板，会自动引入打包的js
-- less解析
-- css解析, 压缩、自动添加浏览器前缀
-- 图片字体等资源加载
-- AntDesign (不需要可以 npm uninstall babel-plugin-import antd)
+- HTML模板自动注入
+- Less/CSS处理
+- 资源文件加载
+- Ant Design按需加载
+
+### 代码质量
+
+- ESLint + Prettier
+- Stylelint
+- TypeScript类型检查
+
+## 依赖版本
+
+核心依赖版本请参考package.json文件。
 
