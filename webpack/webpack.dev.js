@@ -1,8 +1,7 @@
-import webpack from 'webpack'
 import { merge } from 'webpack-merge'
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import * as PATHS from '../paths.js';
-import commonConfig from './webpack.common.js';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import * as PATHS from '../paths.js'
+import commonConfig from './webpack.common.js'
 
 /** @type {import('webpack').Configuration} */
 const devConfig = merge(commonConfig, {
@@ -20,4 +19,4 @@ const devConfig = merge(commonConfig, {
   ],
 })
 
-export default devConfig;
+export default devConfig

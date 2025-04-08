@@ -1,8 +1,8 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import * as PATHS from '../paths.js';
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import * as PATHS from '../paths.js'
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 const CSS_NAME = IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash:8].css'
@@ -33,9 +33,7 @@ const commonConfig = {
       {
         test: /\.(js|jsx|ts|tsx)$/, // 增加对 .ts 和 .tsx 文件的支持
         use: [
-          {
-            loader: 'thread-loader',
-          },
+          'thread-loader',
           'babel-loader',
           {
             loader: 'ts-loader', //仅转译，错误放到fork-ts-Checker-webpack-plugin处理
@@ -148,7 +146,7 @@ const commonConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: PATHS.publicHtmlPath,
-      favicon: PATHS.faviconPath
+      favicon: PATHS.faviconPath,
     }),
     new MiniCssExtractPlugin({
       filename: CSS_NAME,
