@@ -1,8 +1,8 @@
-# React + Ant Design 项目脚手架
+# React模板项目
 
 ## 项目概述
 
-基于React 19 + Ant Design 5 + Webpack 5构建的现代化前端开发脚手架，提供完整的开发环境配置和优化方案。
+基于React 19 + Ant Design 5 + Webpack 5构建的模板项目，提供完整的开发环境配置和优化方案。
 
 ## 技术栈
 
