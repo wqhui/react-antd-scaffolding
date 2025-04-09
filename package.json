@@ -9,7 +9,9 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "analyze": "cross-env NODE_ENV=production webpack --progress --config webpack/webpack.analyze.js",
     "measure:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.measure.js",
-    "measure:build": "cross-env NODE_ENV=development webpack --config webpack/webpack.measure.js"
+    "measure:build": "cross-env NODE_ENV=development webpack --config webpack/webpack.measure.js",
+    "postinstall": "husky",
+    "commitlint": "commitlint --edit"
   },
   "keywords": [
     "React",
@@ -29,10 +31,24 @@
     "> 1%",
     "ie >= 11"
   ],
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.16",
     "@types/file-loader": "^5.0.4",
     "@types/react": "^19.1.0",
@@ -53,8 +69,10 @@
     "fork-ts-checker-webpack-plugin": "^9.0.3",
     "globals": "^16.0.0",
     "html-webpack-plugin": "^5.3.1",
+    "husky": "^9.1.7",
     "less": "^4.2.2",
     "less-loader": "^12.2.0",
+    "lint-staged": "^15.5.0",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.4",
     "postcss-less": "^6.0.0",
