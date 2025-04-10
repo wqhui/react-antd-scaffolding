@@ -33,7 +33,7 @@ const commonConfig = {
       {
         test: /\.(js|jsx|ts|tsx)$/, // 增加对 .ts 和 .tsx 文件的支持
         use: [
-          'thread-loader',
+          // 'thread-loader',  线程启动开销较大，小型项目优化效果不明显，如果大型项目（文件超过100个）再启动
           'babel-loader',
           {
             loader: 'ts-loader', //仅转译，错误放到fork-ts-Checker-webpack-plugin处理

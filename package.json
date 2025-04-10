@@ -10,6 +10,7 @@
     "analyze": "cross-env NODE_ENV=production webpack --progress --config webpack/webpack.analyze.js",
     "measure:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.measure.js",
     "measure:build": "cross-env NODE_ENV=development webpack --config webpack/webpack.measure.js",
+    "dll": "webpack --config webpack/webpack.dll.js",
     "postinstall": "husky",
     "commitlint": "commitlint --edit"
   },
@@ -56,6 +57,7 @@
     "@types/webpack-merge": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
     "@typescript-eslint/parser": "^8.29.0",
+    "add-asset-html-webpack-plugin": "^6.0.0",
     "babel-loader": "^10.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
