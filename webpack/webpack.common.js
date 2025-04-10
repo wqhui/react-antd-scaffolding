@@ -129,17 +129,32 @@ const commonConfig = {
         },
         //分割node包代码
         vendors: {
-          name: 'chunk-vendors',
+          name(module) {
+            const moduleName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+            )[1]
+            if (moduleName.includes('react')) {
+              return 'react-chunk'
+            }
+            if (
+              moduleName.includes('antd') ||
+              moduleName.includes('@ant-design')
+            ) {
+              return 'antd-chunk'
+            }
+            return 'vendor-chunk'
+          },
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all',
-          priority: 2,
+          priority: 10,
         },
-        antd: {
-          name: 'chunk-antd',
-          test: /[\\/]node_modules[\\/]antd[\\/]/,
-          chunks: 'all',
-          priority: 3,
-        },
+        // antd: {
+        //   name: 'chunk-antd',
+        //   test: /[\\/]node_modules[\\/](antd|@ant-design)[\\/]/, // 同时匹配 antd 和 @ant-design 图标库
+        //   chunks: 'all',
+        //   minSize: 0,
+        //   priority: 3,
+        // },
       },
     },
   },
