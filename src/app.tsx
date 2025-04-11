@@ -1,11 +1,15 @@
 import { Flex } from 'antd'
 import webpackLogo from '@/assets/images/webpack.jpg'
-import antdLogo from '@/assets/images/antd.svg' 
+import antdLogo from '@/assets/images/antd.svg'
 import reactLogo from '@/assets/images/react.png'
+import { find } from 'lodash'
 
 import styles from './app.less'
 
 function App() {
+  const num = find([1, 2, 3], (item) => {
+    return item === 2
+  })
   return (
     <Flex className={styles.app} vertical>
       <div className={styles.logos}>
@@ -28,7 +32,7 @@ function App() {
         <img className={styles.logo} src={webpackLogo} alt='Webpack' />
       </div>
       <h1>React 19 + Ant Design 5 + Webpack 5</h1>
-      <p className={styles.welcome}>Hello World</p>
+      <p className={styles.welcome}>Hello World [{num}]</p>
     </Flex>
   )
 }

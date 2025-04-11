@@ -1,6 +1,7 @@
 import { merge } from 'webpack-merge'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin'
 import * as PATHS from '../paths.js'
 import commonConfig from './webpack.common.js'
 
@@ -19,6 +20,8 @@ const prodConfig = merge(commonConfig, {
       }),
     ],
   },
+  // @ts-expect-error lodash-webpack-plugin 类型定义有问题，暂时忽略
+  plugins: [new LodashModuleReplacementPlugin()],
 })
 
 export default prodConfig

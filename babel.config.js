@@ -18,5 +18,6 @@ export default {
   ],
   plugins: [
     process.env.NODE_ENV === 'development' && 'react-refresh/babel', // 开发环境使用react-refresh
+    'lodash', // 按需加载lodash
   ].filter(Boolean),
 }
